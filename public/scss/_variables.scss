@@ -1,4 +1,16 @@
+// color
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --main-dark: #2A2A2A;
+  --main-grey: #4A4A4A;
+  --middle-grey: #999999;
+  --light-grey:#E6E6EB;
+  --pink: #F67599;
+}
+
 // class
+$font-size: 4px;
 
 .d-none {
   display: none;
@@ -10,4 +22,19 @@
 
 .d-grid {
   display: grid;
+}
+
+//mixin
+@mixin circle($width, $background-color) {
+  width: $width;
+  height: $width;
+  line-height: $width;
+  text-align: center;
+  background-color: $background-color;
+  border-radius: 50%;
+}
+
+@mixin square($width, $height) {
+  width: $width;
+  height: $height;
 }

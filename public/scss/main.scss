@@ -3,6 +3,47 @@
 
 main div { //觀察用
   border: 1px solid black;
-  margin: 20px;
-  padding: 20px;
+}
+
+//general
+.container {
+  max-width: 375px;
+  margin: 0 15px;
+}
+
+//details
+
+.page-title {
+  font-size: 6 * $font-size;
+  margin: 15px 0 24px;
+}
+.page-content {
+  flex-direction: column;
+  .payment-info {
+    .stepper-container {
+      justify-content: space-between;
+      align-items: center;
+      .step {
+        .step-number {
+          @include circle(32px, var(--white));
+          border: 1px solid var(--light-grey);
+          color: var(--light-grey);
+          font-size: 4 * $font-size;
+        }
+        .step-active {
+          border-color: var(--main-dark);
+          background-color: var(--main-dark);
+          color: var(--white);
+        }
+      }
+      .line {
+        @include square(60px, 1px);
+        background-color: var(--light-grey);
+      }
+      .line-active {
+        height: 2px;
+        background-color: var(--main-dark);
+      }
+    }
+  }
 }

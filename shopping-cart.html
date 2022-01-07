@@ -10,15 +10,24 @@
 <body>
   <main>
     <div class="container">
-      <h2 class="page-title">page-title 結帳</h2>
-      <div class="page-content">page-content
-        <div class="payment-info">payment-info
-          <div class="stepper-container d-flex">stepper-container
-            <div class="step">step</div>
-            <span class="line">—</span>
-            <div class="step">step</div>
-            <span class="line">—</span>
-            <div class="step">step</div>
+      <h2 class="page-title">結帳</h2>
+      <div class="page-content d-flex">
+        <div class="payment-info">
+          <div class="stepper-container d-flex">
+            <div class="step">
+              <h4 class="step-number step-active">1</h4>
+              <h5 class="d-none">寄送地址</h5>
+            </div>
+            <span class="line line-active"></span>
+            <div class="step">
+              <h4 class="step-number">2</h4>
+              <h5 class="d-none">運送方式</h5>
+            </div>
+            <span class="line"></span>
+            <div class="step">
+              <h4 class="step-number">3</h4>
+              <h5 class="d-none">付款資料</h5>
+            </div>
           </div>
           <div class="payment-form">payment-form
             <form action="" id="payment-form">
