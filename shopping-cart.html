@@ -14,24 +14,24 @@
       <div class="page-content d-flex">
         <div class="payment-info">
           <div class="stepper-container d-flex">
-            <div class="step">
+            <div class="step d-flex">
               <h4 class="step-number step-active">1</h4>
-              <h5 class="d-none">寄送地址</h5>
+              <h5>寄送地址</h5>
             </div>
             <span class="line line-active"></span>
-            <div class="step">
+            <div class="step d-flex">
               <h4 class="step-number">2</h4>
-              <h5 class="d-none">運送方式</h5>
+              <h5>運送方式</h5>
             </div>
             <span class="line"></span>
-            <div class="step">
+            <div class="step d-flex">
               <h4 class="step-number">3</h4>
-              <h5 class="d-none">付款資料</h5>
+              <h5>付款資料</h5>
             </div>
           </div>
           <div class="payment-form">
             <form id="payment-form" method="post">
-              <div class="part">
+              <div class="part d-none">
                 <h3>寄送地址</h3>
                 <div class="info-buyer">
                   <label for="gender" class="gender">
@@ -90,7 +90,7 @@
                   </div>
                 </div>
               </div>
-              <div class="part d-none">
+              <div class="part">
                 <h3>付款資訊</h3>
                 <div class="info-credit-card">
                   <label for="card-owner" class="card-owner">
@@ -113,17 +113,23 @@
               </div>
             </form>
           </div>
-          <div class="stepper-control d-none">stepper-control
-            <button class="btn">←上一步</button>
-            <button class="btn">下一步→</button>
+          <div class="stepper-control d-flex">
+            <button class="btn btn-previous" disabled>
+              <img src="/image/arrow-pre.png" alt="">
+              <span>上一步</span>
+            </button>
+            <button class="btn btn-next">
+              <span>下一步</span>
+              <img src="/image/arrow-next.png" alt="">
+            </button>
           </div>
         </div>
         <div class="shopping-cart">
-          <h3 class="d-none">購物籃</h3>
+          <h3>購物籃</h3>
           <div class="shopping-items">
             <div class="item d-flex">
               <img src="/image/item01.png" alt="">
-              <div class="item-info">
+              <div class="item-info d-flex">
                 <h4 class="weight-400">破壞補丁修身牛仔褲</h4>
                 <div>
                   <span class="minus">－</span>
@@ -135,7 +141,7 @@
             </div>
             <div class="item d-flex">
               <img src="/image/item02.png" alt="">
-              <div class="item-info">
+              <div class="item-info d-flex">
                 <h4 class="weight-400">刷色直筒牛仔褲</h4>
                 <div>
                   <span class="minus">－</span>
@@ -155,7 +161,7 @@
             </div>
           </div>
         </div>
-        <div class="stepper-control d-flex">
+        <div class="stepper-control">
           <button class="btn btn-previous" disabled>
             <img src="/image/arrow-pre.png" alt="">
             <span>上一步</span>

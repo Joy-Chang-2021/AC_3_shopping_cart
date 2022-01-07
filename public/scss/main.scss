@@ -49,6 +49,9 @@ input[type="radio"] {
           background-color: var(--main-dark);
           color: var(--white);
         }
+        h5 {
+          display: none;
+        }
       }
       .line {
         @include square(60px, 1px);
@@ -123,11 +126,17 @@ input[type="radio"] {
         }
       }
     }
+    .stepper-control {
+      display: none;
+    }
   }
   .shopping-cart {
     margin: 32px 0;
     padding: 0 16px;
     @include border (1px, 8px, var(--light-grey));
+    h3 {
+      display: none;
+    }
     .shopping-items {
       .item {
         margin-top: 16px;
@@ -135,7 +144,6 @@ input[type="radio"] {
         @include square (100px);
         }
         .item-info {
-          display: flex;
           flex-direction: column;
           justify-content: space-around;
           align-items: flex-end;
@@ -188,4 +196,97 @@ input[type="radio"] {
       }
     } 
   }
+}
+
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+  .page-title {
+    @include font-size (8);
+  }
+  .page-content {
+    flex-direction: row;
+    justify-content: space-between;
+    .payment-info {
+      width: 536px;
+      .stepper-container .step {
+        align-items: center;
+        h5 {
+          display: inline-block;
+          margin-left: 5px;
+          @include font-size (4, 6);
+        }
+      }
+      #payment-form {
+        margin-bottom: 48px;
+        .part h3 {
+          margin-top: 64px;
+        }
+        .info-buyer {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 24px 30px;
+          .gender, .city {
+            width: unset;
+            grid-column: span 2;
+          }
+          .name, .address {
+            width: unset;
+            grid-column: span 4;
+          }
+          .phone, .mail {
+            grid-column: span 3;
+          }
+        }
+        .info-delivery {
+          margin-bottom: 144px;
+          width: 435px;
+        }
+        .info-credit-card {
+          .card-owner, .card-number {
+            max-width: 350px;
+          }
+          .card-exp, .card-security {
+            width: 255px;
+          }
+        }
+      }
+      .stepper-control {
+        display: flex;
+        justify-content: space-between;
+        .btn-previous:disabled {
+          display: unset;
+          visibility: hidden;
+          ~ .btn-next {
+            width: 156px;
+          }
+        }
+      } 
+    }
+    .shopping-cart {
+      width: 440px;
+      h3 {
+        display: block;
+        margin: 32px 0;
+        @include font-size (4.5);
+      }
+      .shopping-items .item .item-info {
+        position: relative;
+        margin-left: 21px;
+        justify-content: unset;         align-items: unset;
+        div {
+          margin: 18px 0 ;
+        }
+        .item-cost {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+    .stepper-control {
+      display: none;
+    }
+  } 
 }

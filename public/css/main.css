@@ -132,6 +132,10 @@ input[type="radio"]:checked {
   color: var(--white);
 }
 
+.page-content .payment-info .stepper-container .step h5 {
+  display: none;
+}
+
 .page-content .payment-info .stepper-container .line {
   width: 60px;
   height: 1px;
@@ -236,11 +240,19 @@ input[type="radio"]:checked {
   width: 158px;
 }
 
+.page-content .payment-info .stepper-control {
+  display: none;
+}
+
 .page-content .shopping-cart {
   margin: 32px 0;
   padding: 0 16px;
   border: 1px solid var(--light-grey);
   border-radius: 8px;
+}
+
+.page-content .shopping-cart h3 {
+  display: none;
 }
 
 .page-content .shopping-cart .shopping-items .item {
@@ -253,9 +265,6 @@ input[type="radio"]:checked {
 }
 
 .page-content .shopping-cart .shopping-items .item .item-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -338,5 +347,117 @@ input[type="radio"]:checked {
 
 .page-content .stepper-control .btn-previous:disabled ~ .btn-next {
   width: 100%;
+}
+
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+  .page-title {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .page-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .page-content .payment-info {
+    width: 536px;
+  }
+  .page-content .payment-info .stepper-container .step {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-content .payment-info .stepper-container .step h5 {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .page-content .payment-info #payment-form {
+    margin-bottom: 48px;
+  }
+  .page-content .payment-info #payment-form .part h3 {
+    margin-top: 64px;
+  }
+  .page-content .payment-info #payment-form .info-buyer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    grid-gap: 24px 30px;
+  }
+  .page-content .payment-info #payment-form .info-buyer .gender, .page-content .payment-info #payment-form .info-buyer .city {
+    width: unset;
+    grid-column: span 2;
+  }
+  .page-content .payment-info #payment-form .info-buyer .name, .page-content .payment-info #payment-form .info-buyer .address {
+    width: unset;
+    grid-column: span 4;
+  }
+  .page-content .payment-info #payment-form .info-buyer .phone, .page-content .payment-info #payment-form .info-buyer .mail {
+    grid-column: span 3;
+  }
+  .page-content .payment-info #payment-form .info-delivery {
+    margin-bottom: 144px;
+    width: 435px;
+  }
+  .page-content .payment-info #payment-form .info-credit-card .card-owner, .page-content .payment-info #payment-form .info-credit-card .card-number {
+    max-width: 350px;
+  }
+  .page-content .payment-info #payment-form .info-credit-card .card-exp, .page-content .payment-info #payment-form .info-credit-card .card-security {
+    width: 255px;
+  }
+  .page-content .payment-info .stepper-control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .page-content .payment-info .stepper-control .btn-previous:disabled {
+    display: unset;
+    visibility: hidden;
+  }
+  .page-content .payment-info .stepper-control .btn-previous:disabled ~ .btn-next {
+    width: 156px;
+  }
+  .page-content .shopping-cart {
+    width: 440px;
+  }
+  .page-content .shopping-cart h3 {
+    display: block;
+    margin: 32px 0;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .page-content .shopping-cart .shopping-items .item .item-info {
+    position: relative;
+    margin-left: 21px;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+  .page-content .shopping-cart .shopping-items .item .item-info div {
+    margin: 18px 0;
+  }
+  .page-content .shopping-cart .shopping-items .item .item-info .item-cost {
+    position: absolute;
+    right: 0;
+  }
+  .page-content .stepper-control {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
