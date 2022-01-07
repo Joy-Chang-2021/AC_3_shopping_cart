@@ -224,4 +224,19 @@ input[type="radio"]:checked {
   top: 13px;
   right: 13px;
 }
+
+.page-content .payment-info .payment-form .info-credit-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-content .payment-info .payment-form .info-credit-card .card-exp, .page-content .payment-info .payment-form .info-credit-card .card-security {
+  width: 158px;
+}
 /*# sourceMappingURL=main.css.map */

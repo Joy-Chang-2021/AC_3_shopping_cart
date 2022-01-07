@@ -118,6 +118,14 @@ input[type="radio"] {
           }
         }
       }
+      .info-credit-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card-exp, .card-security {
+          width: 158px;
+        }
+      }
     }
   }
 }
