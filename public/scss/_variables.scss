@@ -38,3 +38,8 @@ $font-size: 4px;
   width: $width;
   height: $height;
 }
+
+@mixin border ($num, $radius, $color) {
+  border: $num solid $color;
+  border-radius: $radius;
+}

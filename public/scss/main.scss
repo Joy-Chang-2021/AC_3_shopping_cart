@@ -11,8 +11,15 @@ main div { //觀察用
   margin: 0 15px;
 }
 
-//details
+input[type="text"], select {
+  color: var(--main-grey);
+  @include square(100%, 40px);
+  @include border(1px, 4px, var(--main-grey));
+  margin-top: 8px;
+  padding-left: 16px;
+}
 
+//details
 .page-title {
   font-size: 6 * $font-size;
   margin: 15px 0 24px;
@@ -43,6 +50,31 @@ main div { //觀察用
       .line-active {
         height: 2px;
         background-color: var(--main-dark);
+      }
+    }
+    .payment-form {
+      font-size: 3 * $font-size;
+      .part {
+        h3 {
+          margin-top: 24px;
+          font-size: 6 * $font-size;
+        }
+        label {
+          display: block;
+          width: 100%;
+          margin-top: 24px;
+        }
+      }
+      .info-buyer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .gender {
+          width: 133px;
+        }
+        .name {
+          width: 183px;
+        }
       }
     }
   }
