@@ -62,10 +62,6 @@ button[disabled] {
   font-weight: 700;
 }
 
-main div {
-  border: 1px solid black;
-}
-
 .container {
   max-width: 375px;
   margin: 0 15px;
@@ -301,5 +297,46 @@ input[type="radio"]:checked {
   border-top: 1px solid var(--light-grey);
   font-size: 14px;
   line-height: 52px;
+}
+
+.page-content .stepper-control {
+  border-top: 1px solid var(--light-grey);
+  padding-top: 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-content .stepper-control .btn {
+  font-size: 14px;
+  line-height: 46px;
+}
+
+.page-content .stepper-control .btn img {
+  width: 20.5px;
+  height: 9px;
+}
+
+.page-content .stepper-control .btn span {
+  margin: 0 13.5px;
+}
+
+.page-content .stepper-control .btn-next {
+  width: 156px;
+  color: var(--white);
+  border-radius: 8px;
+  background-color: var(--pink);
+}
+
+.page-content .stepper-control .btn-previous {
+  text-align: start;
+}
+
+.page-content .stepper-control .btn-previous:disabled {
+  display: none;
+}
+
+.page-content .stepper-control .btn-previous:disabled ~ .btn-next {
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
