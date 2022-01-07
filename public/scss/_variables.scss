@@ -24,7 +24,23 @@ $font-size: 4px;
   display: grid;
 }
 
-//mixin
+//font-size, line-height
+$font-basic: 4px;
+@mixin font-size ($size, $height: $size) {
+  font-size: $size * $font-basic;
+  line-height: $height * $font-basic;
+}
+
+//font-weight, ex: weight-400
+@each $prop, $abbrev in (font-weight: weight) {
+  @each $num, $val in ('400': 400, '700': 700) {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: #{$val};
+    }
+  }
+}
+
+//box
 @mixin circle($width, $background-color) {
   width: $width;
   height: $width;

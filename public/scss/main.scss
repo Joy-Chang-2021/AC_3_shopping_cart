@@ -19,10 +19,21 @@ input[type="text"], select {
   padding-left: 16px;
 }
 
+input[type="radio"] {
+  -webkit-appearance: none;
+  margin: 0;
+  @include square(20px, 20px);
+  @include border(1px, 50%, var(--main-dark));
+  cursor: pointer;
+  &:checked {
+    box-shadow: inset 0 0 0 6px var(--main-dark);
+  }
+}
+
 //details
 .page-title {
-  font-size: 6 * $font-size;
-  margin: 15px 0 24px;
+  @include font-size (6);
+  margin: 16px 0 24px;
 }
 .page-content {
   flex-direction: column;
@@ -53,11 +64,11 @@ input[type="text"], select {
       }
     }
     .payment-form {
-      font-size: 3 * $font-size;
+      @include font-size (3);
       .part {
         h3 {
           margin-top: 24px;
-          font-size: 6 * $font-size;
+          @include font-size (6)
         }
         label {
           display: block;
@@ -74,6 +85,37 @@ input[type="text"], select {
         }
         .name {
           width: 183px;
+        }
+      }
+      .info-delivery {
+        > div {
+          position: relative;
+          margin-top: 24px;
+          input {
+            position: absolute;
+            top: 50%;
+            transform: translate(100%, -50%);
+            &:checked ~ label {
+              border: 1px solid var(--main-dark);
+            }
+          }
+          label {
+            display: block;
+            margin: 0;
+            padding: 11px 0 11px 60px;
+            @include border(1px, 4px, var(--middle-grey));
+            h6 {
+              @include font-size (3.5, 5);
+            }
+            p {
+              @include font-size (3, 4);
+            }
+            .delivery-cost {
+              position: absolute;
+              top: 13px;
+              right: 13px;
+            }
+          }
         }
       }
     }
