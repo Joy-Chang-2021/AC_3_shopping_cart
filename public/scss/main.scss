@@ -1,12 +1,6 @@
 @import 'reset';
 @import 'variables';
 
-//general
-.container {
-  max-width: 375px;
-  margin: 0 15px;
-}
-
 input[type="text"], select {
   color: var(--main-grey);
   @include square(100%, 40px);

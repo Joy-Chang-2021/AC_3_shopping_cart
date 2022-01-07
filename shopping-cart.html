@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/main.css">
   <title>Shopping Cart</title>
 </head>
 <body>
-  <main>
+  <header>
+    <div class="container header d-flex">
+      <button class="nav-btn">
+        <img src="/image/nav-btn.svg" alt="">
+      </button>
+      <div class="logo d-flex">
+        <a href="#">
+          <img src="/image/logo.svg" alt="">
+          <img src="/image/logo-text.svg" alt="">
+        </a>
+      </div>
+      <div class="nav-option">
+        <nav class="nav-bar">
+          <h3>男裝</h3>
+          <h3>女裝</h3>
+          <h3>最新消息</h3>
+          <h3>客製商品</h3>
+          <h3>聯絡我們</h3>
+        </nav>
+        <div class="icons">
+          <a href="#"><img src="/image/icon-search.svg" alt=""></a>
+          <a href="#"><img src="/image/icon-cart.svg" alt=""></a>
+          <a href="#"><img src="/image/icon-theme.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="d-none">
     <div class="container">
       <h2 class="page-title">結帳</h2>
       <div class="page-content d-flex">
@@ -115,12 +143,12 @@
           </div>
           <div class="stepper-control d-flex">
             <button class="btn btn-previous" disabled>
-              <img src="/image/arrow-pre.png" alt="">
+              <img src="/image/arrow-pre.svg" alt="">
               <span>上一步</span>
             </button>
             <button class="btn btn-next">
               <span>下一步</span>
-              <img src="/image/arrow-next.png" alt="">
+              <img src="/image/arrow-next.svg" alt="">
             </button>
           </div>
         </div>
@@ -163,12 +191,12 @@
         </div>
         <div class="stepper-control">
           <button class="btn btn-previous" disabled>
-            <img src="/image/arrow-pre.png" alt="">
+            <img src="/image/arrow-pre.svg" alt="">
             <span>上一步</span>
           </button>
           <button class="btn btn-next">
             <span>下一步</span>
-            <img src="/image/arrow-next.png" alt="">
+            <img src="/image/arrow-next.svg" alt="">
           </button>
         </div>
       </div>

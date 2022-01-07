@@ -1,0 +1,43 @@
+@import 'reset';
+@import 'variables';
+
+.header {
+  height: 56px;
+  position: relative;
+  .nav-btn {
+    position: absolute;
+    top: 20px;
+    left: 17px;
+  }
+  .logo {
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+      img{
+        margin: 0 4px;
+      }
+    } 
+    
+  }
+  .nav-option {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    .nav-bar h3 {
+      width: 346px;
+      margin: 0 auto;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .icons {
+      padding-top: 25px;
+      a {
+        display: inline-block;
+        margin: 0 20px;
+      }
+    }
+  }
+}

@@ -59,3 +59,9 @@ $font-basic: 4px;
   border: $num solid $color;
   border-radius: $radius;
 }
+
+//general
+.container {
+  max-width: 375px;
+  margin: 0 15px;
+}
