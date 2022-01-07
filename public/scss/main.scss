@@ -128,4 +128,39 @@ input[type="radio"] {
       }
     }
   }
+  .shopping-cart {
+    margin: 32px 0;
+    padding: 0 16px;
+    @include border (1px, 8px, var(--light-grey));
+    .shopping-items {
+      .item {
+        margin-top: 16px;
+        img {
+        @include square (100px);
+        }
+        .item-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-end;
+          flex: 1;
+          .minus, .plus {
+            @include circle (26px, var(--light-grey));
+          }
+          .item-quantity {
+            margin: 0 20px;
+          }
+        }
+      }
+    }
+    .shopping-cost {
+      margin-top: 16px;
+      > div {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--light-grey);
+        @include font-size (3.5, 13);
+      }
+    }
+  }
 }

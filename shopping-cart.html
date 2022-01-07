@@ -31,7 +31,7 @@
           </div>
           <div class="payment-form">
             <form id="payment-form" method="post">
-              <div class="part d-none">
+              <div class="part">
                 <h3>寄送地址</h3>
                 <div class="info-buyer">
                   <label for="gender" class="gender">
@@ -90,7 +90,7 @@
                   </div>
                 </div>
               </div>
-              <div class="part">
+              <div class="part d-none">
                 <h3>付款資訊</h3>
                 <div class="info-credit-card">
                   <label for="card-owner" class="card-owner">
@@ -118,15 +118,41 @@
             <button class="btn">下一步→</button>
           </div>
         </div>
-        <div class="shopping-cart">shopping-cart
+        <div class="shopping-cart">
           <h3 class="d-none">購物籃</h3>
-          <div class="shopping-items">shopping-items
-            <div class="item">item</div>
-            <div class="item">item</div>
+          <div class="shopping-items">
+            <div class="item d-flex">
+              <img src="/image/item01.png" alt="">
+              <div class="item-info">
+                <h4 class="weight-400">破壞補丁修身牛仔褲</h4>
+                <div>
+                  <span class="minus">－</span>
+                  <span class="item-quantity">1</span>
+                  <span class="plus">＋</span>
+                </div>
+                <h4 class="item-cost">$3999</h4>
+              </div>
+            </div>
+            <div class="item d-flex">
+              <img src="/image/item02.png" alt="">
+              <div class="item-info">
+                <h4 class="weight-400">刷色直筒牛仔褲</h4>
+                <div>
+                  <span class="minus">－</span>
+                  <span class="item-quantity">1</span>
+                  <span class="plus">＋</span>
+                </div>
+                <h4 class="item-cost">$1299</h4>
+              </div>
+            </div>
           </div>
-          <div class="shopping-cost">shopping-cost
-            <div class="delivery-fee">delivery-fee</div>
-            <div class="total-cost">total cost</div>
+          <div class="shopping-cost">
+            <div class="delivery-fee">
+              <span>運費</span><span class="weight-700">免費</span>
+            </div>
+            <div class="total-cost">
+              <span>小計</span><span class="weight-700">$5298</span>
+            </div>
           </div>
         </div>
         <div class="stepper-control">stepper-control

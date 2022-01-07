@@ -50,7 +50,7 @@ $font-basic: 4px;
   border-radius: 50%;
 }
 
-@mixin square($width, $height) {
+@mixin square($width, $height: $width) {
   width: $width;
   height: $height;
 }
