@@ -38,10 +38,17 @@ input[type="radio"] {
           color: var(--light-grey);
           font-size: 4 * $font-size;
         }
+        &:nth-child(1) .step-number {
+          color: var(--white);
+          background-color: var(--main-dark);
+        }
         .step-active {
           border-color: var(--main-dark);
-          background-color: var(--main-dark);
+          color: var(--main-dark);
+        }
+        .checked {
           color: var(--white);
+          background-color: var(--main-dark);
         }
         h5 {
           display: none;

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 * {
@@ -65,6 +66,10 @@ button[disabled] {
 .container {
   max-width: 375px;
   margin: 0 15px;
+}
+
+button img, button span {
+  pointer-events: none;
 }
 
 @media screen and (min-width: 376px) {
@@ -133,10 +138,19 @@ input[type="radio"]:checked {
   font-size: 16px;
 }
 
+.page-content .payment-info .stepper-container .step:nth-child(1) .step-number {
+  color: var(--white);
+  background-color: var(--main-dark);
+}
+
 .page-content .payment-info .stepper-container .step .step-active {
   border-color: var(--main-dark);
-  background-color: var(--main-dark);
+  color: var(--main-dark);
+}
+
+.page-content .payment-info .stepper-container .step .checked {
   color: var(--white);
+  background-color: var(--main-dark);
 }
 
 .page-content .payment-info .stepper-container .step h5 {
