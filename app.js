@@ -8,7 +8,7 @@ app.use(express.static('public'))
 
 // setting the route and corresponding response
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/shopping-cart.html')
+  res.sendFile(__dirname + '/index.html')
 })
 
 // Listen the server when it started
