@@ -199,11 +199,11 @@ input[type="radio"]:checked {
 }
 
 .page-content .payment-info .payment-form .info-buyer .gender {
-  width: 133px;
+  width: calc((100% - 30px) * 0.4);
 }
 
 .page-content .payment-info .payment-form .info-buyer .name {
-  width: 183px;
+  width: calc((100% - 30px) * 0.6);
 }
 
 .page-content .payment-info .payment-form .info-delivery > div {
@@ -258,7 +258,7 @@ input[type="radio"]:checked {
 }
 
 .page-content .payment-info .payment-form .info-credit-card .card-exp, .page-content .payment-info .payment-form .info-credit-card .card-security {
-  width: 158px;
+  width: calc((100% - 30px) * 0.5);
 }
 
 .page-content .payment-info .stepper-control {
@@ -401,10 +401,13 @@ input[type="radio"]:checked {
     line-height: 24px;
   }
   .page-content .payment-info #payment-form {
-    margin-bottom: 48px;
+    height: 312px;
   }
   .page-content .payment-info #payment-form .part h3 {
     margin-top: 64px;
+  }
+  .page-content .payment-info #payment-form .part label {
+    margin-top: unset;
   }
   .page-content .payment-info #payment-form .info-buyer {
     display: -ms-grid;
@@ -428,10 +431,13 @@ input[type="radio"]:checked {
     margin-bottom: 144px;
     width: 435px;
   }
-  .page-content .payment-info #payment-form .info-credit-card .card-owner, .page-content .payment-info #payment-form .info-credit-card .card-number {
+  .page-content .payment-info #payment-form .info-credit-card label {
+    margin-top: 24px;
+  }
+  .page-content .payment-info #payment-form .info-credit-card label .card-owner, .page-content .payment-info #payment-form .info-credit-card label .card-number {
     max-width: 350px;
   }
-  .page-content .payment-info #payment-form .info-credit-card .card-exp, .page-content .payment-info #payment-form .info-credit-card .card-security {
+  .page-content .payment-info #payment-form .info-credit-card label .card-exp, .page-content .payment-info #payment-form .info-credit-card label .card-security {
     width: 255px;
   }
   .page-content .payment-info .stepper-control {

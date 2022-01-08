@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
 
+// general in <main>
 input[type="text"], select {
   color: var(--main-grey);
   @include square(100%, 40px);
@@ -81,10 +82,10 @@ input[type="radio"] {
         flex-flow: row wrap;
         justify-content: space-between;
         .gender {
-          width: 133px;
+          width: calc((100% - 30px) * 0.4);
         }
         .name {
-          width: 183px;
+          width: calc((100% - 30px) * 0.6);
         }
       }
       .info-delivery {
@@ -123,7 +124,7 @@ input[type="radio"] {
         flex-wrap: wrap;
         justify-content: space-between;
         .card-exp, .card-security {
-          width: 158px;
+          width: calc((100% - 30px) * 0.5);
         }
       }
     }
@@ -221,14 +222,19 @@ input[type="radio"] {
         }
       }
       #payment-form {
-        margin-bottom: 48px;
-        .part h3 {
-          margin-top: 64px;
+        height: 312px;
+        .part {
+          h3 {
+            margin-top: 64px;
+          }
+          label {
+            margin-top: unset;
+          }
         }
         .info-buyer {
           display: grid;
           grid-template-columns: repeat(6, 1fr);
-          grid-gap: 24px 30px;
+          grid-gap: 24px 30px;          
           .gender, .city {
             width: unset;
             grid-column: span 2;
@@ -246,12 +252,16 @@ input[type="radio"] {
           width: 435px;
         }
         .info-credit-card {
-          .card-owner, .card-number {
-            max-width: 350px;
+          label {
+            margin-top: 24px;
+            .card-owner, .card-number {
+              max-width: 350px;
+            }
+            .card-exp, .card-security {
+              width: 255px;
+            }
           }
-          .card-exp, .card-security {
-            width: 255px;
-          }
+          
         }
       }
       .stepper-control {
