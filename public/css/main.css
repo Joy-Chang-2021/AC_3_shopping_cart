@@ -300,16 +300,18 @@ input[type="radio"]:checked {
           flex: 1;
 }
 
-.page-content .shopping-cart .shopping-items .item .item-info .minus, .page-content .shopping-cart .shopping-items .item .item-info .plus {
+.page-content .shopping-cart .shopping-items .item .item-info div .minus, .page-content .shopping-cart .shopping-items .item .item-info div .plus {
   width: 26px;
   height: 26px;
   line-height: 26px;
   text-align: center;
   background-color: var(--light-grey);
   border-radius: 50%;
+  cursor: pointer;
 }
 
-.page-content .shopping-cart .shopping-items .item .item-info .item-quantity {
+.page-content .shopping-cart .shopping-items .item .item-info div .item-quantity {
+  pointer-events: none;
   margin: 0 20px;
 }
 

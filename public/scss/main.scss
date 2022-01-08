@@ -149,11 +149,15 @@ input[type="radio"] {
           justify-content: space-around;
           align-items: flex-end;
           flex: 1;
-          .minus, .plus {
-            @include circle (26px, var(--light-grey));
-          }
-          .item-quantity {
-            margin: 0 20px;
+          div {
+            .minus, .plus {
+              @include circle (26px, var(--light-grey));
+              cursor: pointer;
+            }
+            .item-quantity {
+              pointer-events: none;
+              margin: 0 20px;
+            }
           }
         }
       }
