@@ -18,7 +18,7 @@ git clone https://github.com/Joy-Chang-2021/AC_3_shopping_cart.git
 ```
 2. 使用終端機，進入專案
 ```
-cd 3_shopping_cart
+cd AC_3_shopping_cart
 ```
 3. 使用套件管理工具 npm，讀取並下載 package.json 檔案中紀錄的套件
 ```
