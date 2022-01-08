@@ -67,6 +67,13 @@ button[disabled] {
   margin: 0 15px;
 }
 
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
+
 .header {
   height: 56px;
   position: relative;
@@ -75,19 +82,19 @@ button[disabled] {
 .header .nav-btn {
   position: absolute;
   top: 20px;
-  left: 17px;
 }
 
 .header .logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .header .logo a {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   text-decoration: none;
 }
 
@@ -95,26 +102,65 @@ button[disabled] {
   margin: 0 4px;
 }
 
-.header .nav-option {
+.header .nav-group {
   position: absolute;
   top: 100%;
   width: 100%;
   text-align: center;
 }
 
-.header .nav-option .nav-bar h3 {
-  width: 346px;
+.header .nav-group .nav-bar h3 {
   margin: 0 auto;
   padding: 24px 0;
   border-bottom: 1px solid var(--light-grey);
 }
 
-.header .nav-option .icons {
+.header .nav-group .icons {
   padding-top: 25px;
 }
 
-.header .nav-option .icons a {
+.header .nav-group .icons a {
   display: inline-block;
   margin: 0 20px;
+}
+
+@media screen and (min-width: 376px) {
+  .header {
+    height: 60px;
+    padding: 18px 0;
+  }
+  .header .nav-btn {
+    display: none;
+  }
+  .header .nav-group {
+    position: unset;
+    top: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .nav-group .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header .nav-group .nav-bar h3 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 32px;
+    padding: unset;
+    border-bottom: unset;
+  }
+  .header .nav-group .icons {
+    padding-top: unset;
+  }
+  .header .nav-group .icons a {
+    display: inline-block;
+    margin: unset;
+    margin-left: 40px;
+  }
 }
 /*# sourceMappingURL=header.css.map */

@@ -65,3 +65,10 @@ $font-basic: 4px;
   max-width: 375px;
   margin: 0 15px;
 }
+
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}

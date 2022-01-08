@@ -193,10 +193,6 @@ input[type="radio"] {
 }
 
 @media screen and (min-width: 376px) {
-  .container {
-    max-width: 1110px;
-    margin: 0 auto;
-  }
   .page-title {
     @include font-size (8);
   }

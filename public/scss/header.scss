@@ -7,13 +7,14 @@
   .nav-btn {
     position: absolute;
     top: 20px;
-    left: 17px;
   }
   .logo {
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     a {
+      flex-wrap: nowrap;
       text-decoration: none;
       img{
         margin: 0 4px;
@@ -21,13 +22,12 @@
     } 
     
   }
-  .nav-option {
+  .nav-group {
     position: absolute;
     top: 100%;
     width: 100%;
     text-align: center;
     .nav-bar h3 {
-      width: 346px;
       margin: 0 auto;
       padding: 24px 0;
       border-bottom: 1px solid var(--light-grey);
@@ -37,6 +37,39 @@
       a {
         display: inline-block;
         margin: 0 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .header {
+    height: 60px;
+    padding: 18px 0;
+    .nav-btn {
+      display: none;
+    }
+    .nav-group {
+      position: unset;
+      top: unset;
+      display: flex;
+      justify-content: space-between;
+      .nav-bar {
+        display: flex;
+        h3 {
+          @include font-size (4, 6);
+          margin-right: 32px;
+          padding: unset;
+          border-bottom: unset;
+        }
+      }
+      .icons {
+        padding-top: unset;
+        a {
+          display: inline-block;
+          margin: unset;
+          margin-left: 40px;
+        }
       }
     }
   }

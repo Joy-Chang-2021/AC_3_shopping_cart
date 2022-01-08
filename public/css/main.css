@@ -67,6 +67,13 @@ button[disabled] {
   margin: 0 15px;
 }
 
+@media screen and (min-width: 376px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
+
 input[type="text"], select {
   color: var(--main-grey);
   width: 100%;
@@ -350,10 +357,6 @@ input[type="radio"]:checked {
 }
 
 @media screen and (min-width: 376px) {
-  .container {
-    max-width: 1110px;
-    margin: 0 auto;
-  }
   .page-title {
     font-size: 32px;
     line-height: 32px;
