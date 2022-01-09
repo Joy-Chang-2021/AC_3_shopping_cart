@@ -31,13 +31,38 @@ button[disabled] {
 }
 
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --screen-background: $white;
+  --screen-text: $black;
   --main-dark: #2A2A2A;
   --main-grey: #4A4A4A;
   --middle-grey: #999999;
-  --light-grey:#E6E6EB;
-  --pink: #F67599;
+  --light-grey: #E6E6EB;
+  --step: #E6E6EB;
+  --step-border: #E6E6EB;
+  --step-active: #2A2A2A;
+  --step-checked: #333333;
+  --cart-panel: $white;
+  --cart-btn: #F0F0F5;
+}
+
+[data-theme="dark"] {
+  --screen-background: #121212;
+  --screen-text: $white;
+  --main-dark: $white;
+  --main-grey: #FFFFFF66;
+  --middle-grey: #FFFFFF66;
+  --light-grey: #FFFFFF33;
+  --step: #F0F0F566;
+  --step-border: #FFFFFF33;
+  --step-active: $white;
+  --step-checked: #333333;
+  --cart-panel: #383838;
+  --cart-btn: #808080;
+}
+
+html, html .header, html .main, .header .nav-group {
+  background-color: var(--screen-background);
+  color: var(--screen-text);
 }
 
 .d-none {
@@ -112,7 +137,6 @@ button img, button span {
   top: 100%;
   width: 100%;
   text-align: center;
-  background-color: var(--white);
 }
 
 .header .nav-group .nav-bar h3 {

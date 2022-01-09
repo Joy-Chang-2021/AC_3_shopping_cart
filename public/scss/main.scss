@@ -4,6 +4,7 @@
 // general in <main>
 input[type="text"], select {
   color: var(--main-grey);
+  background-color: var(--screen-background);
   @include square(100%, 40px);
   @include border(1px, 4px, var(--main-grey));
   margin-top: 8px;
@@ -21,6 +22,40 @@ input[type="radio"] {
   }
 }
 
+// 2個stepper-control的設定
+%stepper-control {
+  border-top: 1px solid var(--light-grey);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  .btn {
+    @include font-size (3.5, 11.5);
+    width: 156px;
+    height: 46px;
+    img {
+      @include square (20.5px, 9px);
+    }
+    span {
+      margin: 0 13.5px;
+    }
+  }
+  .btn-next{
+    color: $white;
+    border-radius: 8px;
+    background-color: $pink;
+  }
+  .btn-previous {
+    color: var(--screen-text);
+    text-align: start;
+    &:disabled {
+      display: none;
+      ~ .btn-next {
+        width: 100%;
+      }
+    }
+  } 
+}
+
 //details
 .page-title {
   @include font-size (6);
@@ -32,36 +67,36 @@ input[type="radio"] {
     .stepper-container {
       justify-content: space-between;
       align-items: center;
+      .line {
+        width: 60px;
+        border-top: 2px solid var(--step);
+      }
       .step {
-        .step-number {
-          @include circle(32px, var(--white));
-          border: 1px solid var(--light-grey);
-          color: var(--light-grey);
-          font-size: 4 * $font-size;
-        }
-        &:nth-child(1) .step-number {
-          color: var(--white);
-          background-color: var(--main-dark);
-        }
-        .step-active {
-          border-color: var(--main-dark);
-          color: var(--main-dark);
-        }
-        .checked {
-          color: var(--white);
-          background-color: var(--main-dark);
+        color: var(--step);
+        background-color: var(--screen-background);
+        h4 {
+          @include font-size(3, 4);
+          @include circle(24px);
+          border: 1px solid var(--step);
         }
         h5 {
           display: none;
+        } 
+      }
+      .active { //字+線
+        color: var(--step-active);
+        border-color: var(--step-active);
+        h4 {
+          border-color: var(--step-active);
+        };
+      }
+      .checked { //字+線
+        @extend .active;
+        h4 { //圓圈字+背景
+          color: $white;
+          border-color: var(--step-checked);
+          background-color: var(--step-checked);
         }
-      }
-      .line {
-        @include square(60px, 1px);
-        background-color: var(--light-grey);
-      }
-      .line-active {
-        height: 2px;
-        background-color: var(--main-dark);
       }
     }
     .payment-form {
@@ -75,6 +110,7 @@ input[type="radio"] {
           display: block;
           width: 100%;
           margin-top: 24px;
+          color: var(--main-grey);
         }
       }
       .info-buyer {
@@ -128,13 +164,15 @@ input[type="radio"] {
         }
       }
     }
-    .stepper-control {
+    .control-pc {
+      @extend %stepper-control;
       display: none;
     }
   }
   .shopping-cart {
     margin: 32px 0;
     padding: 0 16px;
+    background-color: var(--cart-panel);
     @include border (1px, 8px, var(--light-grey));
     h3 {
       display: none;
@@ -152,7 +190,9 @@ input[type="radio"] {
           flex: 1;
           div {
             .minus, .plus {
-              @include circle (26px, var(--light-grey));
+              @include circle (26px);
+              color: $black;
+              background-color: var(--cart-btn);
               cursor: pointer;
             }
             .item-quantity {
@@ -173,34 +213,8 @@ input[type="radio"] {
       }
     }
   }
-  .stepper-control {
-    border-top: 1px solid var(--light-grey);
-    padding-top: 24px;
-    justify-content: space-between;
-    .btn {
-      @include font-size (3.5, 11.5);
-      img {
-        @include square (20.5px, 9px);
-      }
-      span {
-        margin: 0 13.5px;
-      }
-    }
-    .btn-next{
-      width: 156px;
-      color: var(--white);
-      border-radius: 8px;
-      background-color: var(--pink);
-    }
-    .btn-previous {
-      text-align: start;
-      &:disabled {
-        display: none;
-        ~ .btn-next {
-          width: 100%;
-        }
-      }
-    } 
+  .control-mobile {
+    @extend %stepper-control;
   }
 }
 
@@ -219,6 +233,7 @@ input[type="radio"] {
           display: inline-block;
           margin-left: 5px;
           @include font-size (4, 6);
+          // @extend
         }
       }
       #payment-form {
@@ -232,6 +247,7 @@ input[type="radio"] {
           }
         }
         .info-buyer {
+          margin-top: 24px;
           display: grid;
           grid-template-columns: repeat(6, 1fr);
           grid-gap: 24px 30px;          
@@ -264,14 +280,15 @@ input[type="radio"] {
           
         }
       }
-      .stepper-control {
+      .control-pc {
         display: flex;
-        justify-content: space-between;
-        .btn-previous:disabled {
-          display: unset;
-          visibility: hidden;
-          ~ .btn-next {
-            width: 156px;
+        .btn-previous {
+          &:disabled {
+            display: unset;
+            visibility: hidden;
+            ~ .btn-next {
+              width: 156px;
+            }
           }
         }
       } 
@@ -296,7 +313,7 @@ input[type="radio"] {
         }
       }
     }
-    .stepper-control {
+    .control-mobile {
       display: none;
     }
   } 

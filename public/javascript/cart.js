@@ -25,43 +25,41 @@ const itemList = [
     price: 1299
   }
 ]
-
 // /////////////////導覽列變數/////////////////
 const navBtn = document.querySelector('.nav-btn')
 const navbar = document.querySelector('.nav-group')
 const main = document.querySelector('main')
-
+// /////////////////深色模式變數/////////////////
+const themeBtn = document.querySelector('.theme-btn')
+const html = document.documentElement
+const headerImgs = document.querySelectorAll('header img')
+const preBtnImgs = document.querySelectorAll('.btn-previous img')
 // /////////////////結帳區步驟函式/////////////////
 function stepperControlClicked(event) {
   event.preventDefault()
   const target = event.target
-  const nowStep = steps[step].children[0] //面板:目前數字
+  const nowStep = steps[step] //面板:目前數字
   
   if (target.matches('.btn-next') && target.children[0].innerText === '下一步') {
-    const nextStep = steps[step + 1].children[0]
-    
-    nowStep.innerHTML = '&#10003' // now打勾
-    nowStep.classList.remove('step-active') // now取消黑邊
+    const nextStep = steps[step + 1]
+    nowStep.children[0].innerHTML = '&#10003' // now打勾
     nowStep.classList.add('checked') // now背景反黑
-    nextStep.classList.add('step-active') // next黑邊
-
-    if (steps[step + 1].nextElementSibling) {
-      const nextStepLine = steps[step + 1].nextElementSibling
-      nextStepLine.classList.add('line-active')
+    nextStep.classList.add('active') // next黑邊
+    if (step === 0) {
+      steps[1].nextElementSibling.classList.add('active')
     }
-
     formPartsToggled(step, step + 1)
     step += 1
   }
   else if (event.target.matches('.btn-previous')) {
-    const preStep = steps[step - 1].children[0]
-    nowStep.classList.remove('step-active')
-    preStep.innerText = step
-    preStep.classList.add('step-active')
+    const preStep = steps[step - 1]
+    nowStep.classList.remove('active')
+    preStep.children[0].innerText = step
+    preStep.classList.add('active')
     preStep.classList.remove('checked')
-    if (steps[step].nextElementSibling) {
-      const stepLine = steps[step].nextElementSibling
-      stepLine.classList.remove('line-active')
+    if (step === 1) {
+      preStep.classList.add('checked')
+      steps[step].nextElementSibling.classList.remove('active')
     }
     formPartsToggled(step, step - 1)
     step -= 1
@@ -124,14 +122,18 @@ function totalCostRendered(list) {
   })
   totalCost.innerText = '$' + totalCostHTML
 }
-
-
-totalCost
 // /////////////////導覽列函式/////////////////
 function navBtnClicked(event) {
   navbar.classList.toggle('d-none')
 }
-
+// /////////////////深色模式涵式/////////////////
+function themeBtnClicked(event) {
+  if (html.dataset.theme === "dark") {
+    html.removeAttribute("data-theme")
+  } else {
+    html.setAttribute("data-theme", "dark")
+  }
+}
 // /////////////////監聽器/////////////////
 // 兩個按鈕controller
 stepperControllers.forEach(controller => {
@@ -141,3 +143,5 @@ stepperControllers.forEach(controller => {
 itemsPanel.addEventListener('click', itemsPanelClicked)
 // navbar
 navBtn.addEventListener('click', navBtnClicked)
+// dark-mode
+themeBtn.addEventListener('click', themeBtnClicked)

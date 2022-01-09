@@ -1,13 +1,55 @@
 // color
+$white: #ffffff;
+$black: #000000;
+$pink: #F67599;
+
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --screen-background: $white;
+  --screen-text: $black;
   --main-dark: #2A2A2A;
   --main-grey: #4A4A4A;
   --middle-grey: #999999;
-  --light-grey:#E6E6EB;
-  --pink: #F67599;
+  --light-grey: #E6E6EB;
+  // stepper
+  --step: #E6E6EB;
+  --step-border: #E6E6EB;
+  --step-active: #2A2A2A;
+  --step-checked: #333333;
+  // cart
+  --cart-panel: $white;
+  --cart-btn: #F0F0F5;
 }
+
+[data-theme="dark"] {
+  --screen-background: #121212;
+  --screen-text: $white;
+  --main-dark: $white;
+  --main-grey: #FFFFFF66;
+  --middle-grey: #FFFFFF66;
+  --light-grey: #FFFFFF33;
+  // stepper
+  --step: #F0F0F566;
+  --step-border: #FFFFFF33;
+  --step-active: $white;
+  --step-checked: #333333;
+  // cart
+  --cart-panel: #383838;
+  --cart-btn: #808080;
+}
+
+%screen-background {
+  background-color: var(--screen-background);
+  color: var(--screen-text);
+}
+
+html {
+  @extend %screen-background;
+  .header, .main {
+    @extend %screen-background;
+  }
+}
+
+
 
 // class
 $font-size: 4px;
@@ -40,24 +82,30 @@ $font-basic: 4px;
   }
 }
 
-//box
-@mixin circle($width, $background-color) {
+//圓形：大小
+@mixin circle($width) {
   width: $width;
   height: $width;
   line-height: $width;
   text-align: center;
-  background-color: $background-color;
   border-radius: 50%;
 }
-
+//方形：寬、長
 @mixin square($width, $height: $width) {
   width: $width;
   height: $height;
 }
 
+// 待刪
 @mixin border ($num, $radius, $color) {
   border: $num solid $color;
   border-radius: $radius;
+}
+
+//顏色：字色、背景色
+@mixin color ($color, $background) {
+  color: $color;
+  background-color: $background;
 }
 
 //general
