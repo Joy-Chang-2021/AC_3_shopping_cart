@@ -26,6 +26,9 @@ $pink: #F67599;
   --icon-search: url('/image/icon-search.png');
   --icon-cart: url('/image/icon-cart.png');
   --icon-theme: url('/image/icon-theme.png');
+  //step btn
+  --btn-pre: url('/image/arrow-pre.png');
+  --btn-next: url('/image/arrow-next.png');
 }
 
 [data-theme="dark"] {
@@ -53,8 +56,6 @@ $pink: #F67599;
 }
 
 // class
-$font-size: 4px;
-
 .d-none {
   display: none;
 }

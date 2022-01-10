@@ -49,6 +49,8 @@ button[disabled] {
   --icon-search: url('/image/icon-search.png');
   --icon-cart: url('/image/icon-cart.png');
   --icon-theme: url('/image/icon-theme.png');
+  --btn-pre: url('/image/arrow-pre.png');
+  --btn-next: url('/image/arrow-next.png');
 }
 
 [data-theme="dark"] {

@@ -14,11 +14,13 @@ input[type="text"], select {
 input[type="radio"] {
   -webkit-appearance: none;
   margin: 0;
-  @include square(20px, 20px);
-  @include border(1px, 50%, var(--main-dark));
+  @include circle(20px);
+  border: 1px solid var(--step-checked);
+  background-color: var(--screen-background);
   cursor: pointer;
   &:checked {
-    box-shadow: inset 0 0 0 6px var(--main-dark);
+    background-color: $white;
+    box-shadow: inset 0 0 0 5px var(--step-checked);
   }
 }
 
@@ -32,9 +34,6 @@ input[type="radio"] {
     @include font-size (3.5, 11.5);
     width: 156px;
     height: 46px;
-    img {
-      @include square (20.5px, 9px);
-    }
     span {
       margin: 0 13.5px;
     }
@@ -43,6 +42,11 @@ input[type="radio"] {
     color: $white;
     border-radius: 8px;
     background-color: $pink;
+    .btn-next-img {
+      display: inline-block;
+      @include square (20.5px, 9px);
+      content: var(--btn-next);
+    }
   }
   .btn-previous {
     color: var(--screen-text);
@@ -52,6 +56,11 @@ input[type="radio"] {
       ~ .btn-next {
         width: 100%;
       }
+    }
+    .btn-pre-img {
+      display: inline-block;
+      @include square (20.5px, 9px);
+      content: var(--btn-pre);
     }
   } 
 }
@@ -233,7 +242,6 @@ input[type="radio"] {
           display: inline-block;
           margin-left: 5px;
           @include font-size (4, 6);
-          // @extend
         }
       }
       #payment-form {
