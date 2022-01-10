@@ -9,9 +9,11 @@ const formParts = document.querySelectorAll('.part')
 //狀態紀錄
 let step = 0
 // /////////////////購物籃變數/////////////////
-// const deliveryPanel = document.querySelector('.info-delivery')
+const deliveryWayPanel = document.querySelector('.info-delivery')
+let deliveryFee = 0
+const deliveryFeePanel = document.querySelector('.delivery-fee').children[1]
 const itemsPanel = document.querySelector('.shopping-items')
-const totalCost = document.querySelector('.total-cost').children[1]
+const totalCostPanel = document.querySelector('.total-cost').children[1]
 const itemList = [
   {
     id: 1,
@@ -62,7 +64,7 @@ function stepperControlClicked(event) {
     formPartsToggled(step, step - 1)
     step -= 1
   }
-  stepBtnControll(step)
+  stepBtnControl(step)
 }
 
 // 表格轉換
@@ -71,7 +73,7 @@ function formPartsToggled(step1, step2) {
   formParts[step2].classList.toggle('d-none')
 }
 // 上下一步，按鈕轉換
-function stepBtnControll(step) {
+function stepBtnControl(step) {
   preBtns.forEach(btn => {
     if (step > 0) btn.disabled = false
     else btn.disabled = true
@@ -83,10 +85,12 @@ function stepBtnControll(step) {
 }
 // /////////////////購物籃變數/////////////////
 // // 選擇運送方式
-// function deliveryPanelClicked(event) {
-//   if (!event.target.matches('input')) return
-//   console.log('click')
-// }
+function deliveryPanelClicked(event) {
+  if (!event.target.matches('input')) return
+  if (event.target.matches('#delivery-standard')) deliveryFee = 0
+  if (event.target.matches('#delivery-fast')) deliveryFee = 500
+  totalCostRendered(itemList)
+}
 // 修改購物車品項數量
 function itemsPanelClicked(event) {
   if (!event.target.matches('.minus') && !event.target.matches('.plus')) return
@@ -120,11 +124,16 @@ function itemsPanelRendered(event, index, list) {
 }
 // 總價：渲染畫面
 function totalCostRendered(list) {
+  //運費 deliveryFeePanel
+  const deliveryFeeHTML = (deliveryFee === 0) ? '免費' : '$500'
+  deliveryFeePanel.innerText = deliveryFeeHTML
+  //總價
   let totalCostHTML = 0
   list.forEach(item => {
     totalCostHTML += item.quantity * item.price
   })
-  totalCost.innerText = '$' + totalCostHTML
+  totalCostHTML += deliveryFee //加上運費
+  totalCostPanel.innerText = '$' + totalCostHTML
 }
 // /////////////////導覽列函式/////////////////
 function navBtnClicked(event) {
@@ -145,7 +154,7 @@ stepperControllers.forEach(controller => {
 })
 // 購物籃
 itemsPanel.addEventListener('click', itemsPanelClicked)
-// deliveryPanel.addEventListener('click', deliveryPanelClicked)
+deliveryWayPanel.addEventListener('click', deliveryPanelClicked)
 // navbar
 navBtn.addEventListener('click', navBtnClicked)
 // dark-mode
