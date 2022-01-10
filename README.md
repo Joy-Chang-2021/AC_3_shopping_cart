@@ -1,6 +1,8 @@
 # Shopping Cart
+[網頁預覽](https://joy-chang-2021.github.io/AC_3_shopping_cart/index.html)
 
 ![cover](/public/image/readme-cover.png)
+![cover-dark](/public/image/readme-cover-dark.png)
 
 ---
 ### 購物車畫面
@@ -10,6 +12,7 @@
 - 導覽列，手機版使用按鈕控制顯示
 - 表格「上一步」、「下一步」切換顯示結帳的三個步驟
 - 購物籃，可點擊「+」、「-」增減商品數量及顯示價錢
+- 導覽列，可點擊切換Light/Dark mode
 ---
 ### 專案下載
 1. 使用終端機，貼上此專案連結

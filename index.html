@@ -4,24 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./public/css/header.css">
-  <link rel="stylesheet" href="./public/css/main.css">
+  <link rel="stylesheet" href="/public/css/header.css">
+  <link rel="stylesheet" href="/public/css/main.css">
   <title>Shopping Cart</title>
+  <!-- this file is for showing github page -->
 </head>
 <body>
   <header>
     <div class="container">
       <div class="header d-flex">
-        <button class="nav-btn">
-          <img src="./public/image/nav-btn.svg" alt="">
-        </button>
-        <div class="logo">
-          <a href="#" class="d-flex">
-            <img src="./public/image/logo.svg" alt="">
-            <img src="./public/image/logo-text.svg" alt="">
-          </a>
+        <div class="navbar-btn"></div>
+        <div class="logo-panel d-flex">
+          <div href="#" class="logo-img"></div>
+          <div href="#" class="logo-text"></div>
         </div>
-        <div class="nav-group d-none">
+        <div class="navbar-panel d-none">
           <nav class="nav-bar">
             <h3>男裝</h3>
             <h3>女裝</h3>
@@ -29,10 +26,10 @@
             <h3>客製商品</h3>
             <h3>聯絡我們</h3>
           </nav>
-          <div class="icons">
-            <a href="#"><img src="./public/image/icon-search.svg" alt=""></a>
-            <a href="#"><img src="./public/image/icon-cart.svg" alt=""></a>
-            <a href="#"><img src="./public/image/icon-theme.svg" alt=""></a>
+          <div class="icons d-flex">
+            <div class="icon-search"></div>
+            <div class="icon-cart"></div>
+            <div class="icon-theme"></div>
           </div>
         </div>
       </div>
@@ -44,18 +41,18 @@
       <div class="page-content d-flex">
         <div class="payment-info">
           <div class="stepper-container d-flex">
-            <div class="step d-flex">
-              <h4 class="step-number step-active">1</h4>
+            <div class="step d-flex checked">
+              <h4>1</h4>
               <h5>寄送地址</h5>
             </div>
-            <span class="line line-active"></span>
+            <span class="line active"></span>
             <div class="step d-flex">
-              <h4 class="step-number">2</h4>
+              <h4>2</h4>
               <h5>運送方式</h5>
             </div>
             <span class="line"></span>
             <div class="step d-flex">
-              <h4 class="step-number">3</h4>
+              <h4>3</h4>
               <h5>付款資料</h5>
             </div>
           </div>
@@ -143,14 +140,14 @@
               </div>
             </form>
           </div>
-          <div class="stepper-control d-flex">
+          <div class="stepper-control control-pc">
             <button class="btn btn-previous" disabled>
-              <img src="./public/image/arrow-pre.svg" alt="">
+              <div class="btn-pre-img"></div>
               <span>上一步</span>
             </button>
             <button class="btn btn-next">
               <span>下一步</span>
-              <img src="./public/image/arrow-next.svg" alt="">
+              <div class="btn-next-img"></div>
             </button>
           </div>
         </div>
@@ -158,7 +155,7 @@
           <h3>購物籃</h3>
           <div class="shopping-items">
             <div class="item d-flex" data-id="1">
-              <img src="./public/image/item01.png" alt="">
+              <img src="/image/item01.png" alt="">
               <div class="item-info d-flex">
                 <h4 class="weight-400">破壞補丁修身牛仔褲</h4>
                 <div data-id="1">
@@ -170,7 +167,7 @@
               </div>
             </div>
             <div class="item d-flex" data-id="2">
-              <img src="./public/image/item02.png" alt="">
+              <img src="/image/item02.png" alt="">
               <div class="item-info d-flex">
                 <h4 class="weight-400">刷色直筒牛仔褲</h4>
                 <div data-id="2">
@@ -192,19 +189,19 @@
             </div>
           </div>
         </div>
-        <div class="stepper-control d-flex">
+        <div class="control-mobile d-flex stepper-control">
           <button class="btn btn-previous" disabled>
-            <img src="./public/image/arrow-pre.svg" alt="">
+            <div class="btn-pre-img"></div>
             <span>上一步</span>
           </button>
           <button class="btn btn-next">
             <span>下一步</span>
-            <img src="./public/image/arrow-next.svg" alt="">
+            <div class="btn-next-img"></div>
           </button>
         </div>
       </div>
     </div>
   </main>
-  <script src="./public/javascript/cart.js"></script>
+  <script src="/public/javascript/cart.js"></script>
 </body>
 </html>

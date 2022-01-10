@@ -53,6 +53,9 @@ $pink: #F67599;
   --icon-search: url('/image/icon-search-dark.png');
   --icon-cart: url('/image/icon-cart-dark.png');
   --icon-theme: url('/image/icon-theme-dark.png');
+  //step btn
+  --btn-pre: url('/image/arrow-pre-dark.png');
+  --btn-next: url('/image/arrow-next.png');
 }
 
 // class
@@ -98,7 +101,6 @@ $font-basic: 4px;
   height: $height;
 }
 
-// 待刪
 @mixin border ($num, $radius, $color) {
   border: $num solid $color;
   border-radius: $radius;
