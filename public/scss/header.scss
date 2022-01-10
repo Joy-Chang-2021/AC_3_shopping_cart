@@ -1,29 +1,45 @@
 @import 'reset';
 @import 'variables';
 
+
+%icon {
+  @include square(24px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 .header {
   height: 56px;
   position: relative;
-  .nav-btn {
+  .navbar-btn {
+    @extend %icon;
     position: absolute;
-    top: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: var(--navbar-btn);
   }
-  .logo {
+  .logo-panel {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    a {
-      flex-wrap: nowrap;
-      text-decoration: none;
-      img{
-        margin: 0 4px;
-      }
-    } 
-    
+    flex-wrap: nowrap;
+    align-items: center;
+    .logo-img {
+      @extend %icon;
+      background-image: var(--logo-img);
+    }
+    .logo-text {
+      @extend %icon;
+      @include square (105px, 15px);
+      background-image: var(--logo-text);
+      margin-left: 8px;
+    }
   }
-  .nav-group {
-    @extend %screen-background;
+  .navbar-panel {
+    color: var(--screen-text);
+    background-color: var(--screen-background);
     position: absolute;
     top: 100%;
     width: 100%;
@@ -31,13 +47,23 @@
     .nav-bar h3 {
       margin: 0 auto;
       padding: 24px 0;
-      border-bottom: 1px solid var(--light-grey);
+      border-bottom: 1px solid var(--middle-grey);
     }
     .icons {
       padding-top: 25px;
-      a {
-        display: inline-block;
+      justify-content: center;
+      div {
+        @extend %icon;
         margin: 0 20px;
+      }
+      .icon-search {
+        background-image: var(--icon-search);
+      }
+      .icon-cart {
+        background-image: var(--icon-cart);
+      }
+      .icon-theme {
+        background-image: var(--icon-theme);
       }
     }
   }
@@ -47,10 +73,10 @@
   .header {
     height: 60px;
     padding: 18px 0;
-    .nav-btn {
+    .navbar-btn {
       display: none;
     }
-    .nav-group {
+    .navbar-panel {
       position: unset;
       top: unset;
       display: flex;
@@ -66,11 +92,6 @@
       }
       .icons {
         padding-top: unset;
-        a {
-          display: inline-block;
-          margin: unset;
-          margin-left: 40px;
-        }
       }
     }
   }

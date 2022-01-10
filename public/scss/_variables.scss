@@ -4,8 +4,9 @@ $black: #000000;
 $pink: #F67599;
 
 :root {
-  --screen-background: $white;
-  --screen-text: $black;
+  //main
+  --screen-background: #ffffff;
+  --screen-text: #000000;
   --main-dark: #2A2A2A;
   --main-grey: #4A4A4A;
   --middle-grey: #999999;
@@ -16,40 +17,40 @@ $pink: #F67599;
   --step-active: #2A2A2A;
   --step-checked: #333333;
   // cart
-  --cart-panel: $white;
+  --cart-panel: #ffffff;
   --cart-btn: #F0F0F5;
+  // icon
+  --navbar-btn: url('/image/nav-btn.png');
+  --logo-img: url('/image/logo-img.png');
+  --logo-text: url('/image/logo-text.png');
+  --icon-search: url('/image/icon-search.png');
+  --icon-cart: url('/image/icon-cart.png');
+  --icon-theme: url('/image/icon-theme.png');
 }
 
 [data-theme="dark"] {
   --screen-background: #121212;
-  --screen-text: $white;
-  --main-dark: $white;
+  --screen-text: #ffffff;
+  --main-dark: #ffffff;
   --main-grey: #FFFFFF66;
   --middle-grey: #FFFFFF66;
   --light-grey: #FFFFFF33;
   // stepper
   --step: #F0F0F566;
   --step-border: #FFFFFF33;
-  --step-active: $white;
+  --step-active: #ffffff;
   --step-checked: #333333;
   // cart
   --cart-panel: #383838;
   --cart-btn: #808080;
+  // icon
+  --navbar-btn: url('/image/nav-btn-dark.png');
+  --logo-img: url('/image/logo-img.png');
+  --logo-text: url('/image/logo-text-dark.png');
+  --icon-search: url('/image/icon-search-dark.png');
+  --icon-cart: url('/image/icon-cart-dark.png');
+  --icon-theme: url('/image/icon-theme-dark.png');
 }
-
-%screen-background {
-  background-color: var(--screen-background);
-  color: var(--screen-text);
-}
-
-html {
-  @extend %screen-background;
-  .header, .main {
-    @extend %screen-background;
-  }
-}
-
-
 
 // class
 $font-size: 4px;
@@ -109,6 +110,11 @@ $font-basic: 4px;
 }
 
 //general
+html, header, main {
+  color: var(--screen-text);
+  background-color: var(--screen-background);
+}
+
 .container {
   max-width: 375px;
   margin: 0 15px;

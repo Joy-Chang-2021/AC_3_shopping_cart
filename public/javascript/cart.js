@@ -26,14 +26,11 @@ const itemList = [
   }
 ]
 // /////////////////導覽列變數/////////////////
-const navBtn = document.querySelector('.nav-btn')
-const navbar = document.querySelector('.nav-group')
-const main = document.querySelector('main')
+const navBtn = document.querySelector('.navbar-btn')
+const navbarPanel = document.querySelector('.navbar-panel')
 // /////////////////深色模式變數/////////////////
-const themeBtn = document.querySelector('.theme-btn')
+const themeBtn = document.querySelector('.icon-theme')
 const html = document.documentElement
-const headerImgs = document.querySelectorAll('header img')
-const preBtnImgs = document.querySelectorAll('.btn-previous img')
 // /////////////////結帳區步驟函式/////////////////
 function stepperControlClicked(event) {
   event.preventDefault()
@@ -124,7 +121,7 @@ function totalCostRendered(list) {
 }
 // /////////////////導覽列函式/////////////////
 function navBtnClicked(event) {
-  navbar.classList.toggle('d-none')
+  navbarPanel.classList.toggle('d-none')
 }
 // /////////////////深色模式涵式/////////////////
 function themeBtnClicked(event) {

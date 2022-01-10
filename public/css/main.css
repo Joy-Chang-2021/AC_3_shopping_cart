@@ -31,8 +31,8 @@ button[disabled] {
 }
 
 :root {
-  --screen-background: $white;
-  --screen-text: $black;
+  --screen-background: #ffffff;
+  --screen-text: #000000;
   --main-dark: #2A2A2A;
   --main-grey: #4A4A4A;
   --middle-grey: #999999;
@@ -41,28 +41,35 @@ button[disabled] {
   --step-border: #E6E6EB;
   --step-active: #2A2A2A;
   --step-checked: #333333;
-  --cart-panel: $white;
+  --cart-panel: #ffffff;
   --cart-btn: #F0F0F5;
+  --navbar-btn: url('/image/nav-btn.png');
+  --logo-img: url('/image/logo-img.png');
+  --logo-text: url('/image/logo-text.png');
+  --icon-search: url('/image/icon-search.png');
+  --icon-cart: url('/image/icon-cart.png');
+  --icon-theme: url('/image/icon-theme.png');
 }
 
 [data-theme="dark"] {
   --screen-background: #121212;
-  --screen-text: $white;
-  --main-dark: $white;
+  --screen-text: #ffffff;
+  --main-dark: #ffffff;
   --main-grey: #FFFFFF66;
   --middle-grey: #FFFFFF66;
   --light-grey: #FFFFFF33;
   --step: #F0F0F566;
   --step-border: #FFFFFF33;
-  --step-active: $white;
+  --step-active: #ffffff;
   --step-checked: #333333;
   --cart-panel: #383838;
   --cart-btn: #808080;
-}
-
-html, html .header, html .main {
-  background-color: var(--screen-background);
-  color: var(--screen-text);
+  --navbar-btn: url('/image/nav-btn-dark.png');
+  --logo-img: url('/image/logo-img.png');
+  --logo-text: url('/image/logo-text-dark.png');
+  --icon-search: url('/image/icon-search-dark.png');
+  --icon-cart: url('/image/icon-cart-dark.png');
+  --icon-theme: url('/image/icon-theme-dark.png');
 }
 
 .d-none {
@@ -86,6 +93,11 @@ html, html .header, html .main {
 
 .weight-700 {
   font-weight: 700;
+}
+
+html, header, main {
+  color: var(--screen-text);
+  background-color: var(--screen-background);
 }
 
 .container {
