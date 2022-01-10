@@ -20,15 +20,15 @@ $pink: #F67599;
   --cart-panel: #ffffff;
   --cart-btn: #F0F0F5;
   // icon
-  --navbar-btn: url('/image/nav-btn.png');
-  --logo-img: url('/image/logo-img.png');
-  --logo-text: url('/image/logo-text.png');
-  --icon-search: url('/image/icon-search.png');
-  --icon-cart: url('/image/icon-cart.png');
-  --icon-theme: url('/image/icon-theme.png');
+  --navbar-btn: url('../image/nav-btn.png');
+  --logo-img: url('../image/logo-img.png');
+  --logo-text: url('../image/logo-text.png');
+  --icon-search: url('../image/icon-search.png');
+  --icon-cart: url('../image/icon-cart.png');
+  --icon-theme: url('../image/icon-theme.png');
   //step btn
-  --btn-pre: url('/image/arrow-pre.png');
-  --btn-next: url('/image/arrow-next.png');
+  --btn-pre: url('../image/arrow-pre.png');
+  --btn-next: url('../image/arrow-next.png');
 }
 
 [data-theme="dark"] {
@@ -47,15 +47,15 @@ $pink: #F67599;
   --cart-panel: #383838;
   --cart-btn: #808080;
   // icon
-  --navbar-btn: url('/image/nav-btn-dark.png');
-  --logo-img: url('/image/logo-img.png');
-  --logo-text: url('/image/logo-text-dark.png');
-  --icon-search: url('/image/icon-search-dark.png');
-  --icon-cart: url('/image/icon-cart-dark.png');
-  --icon-theme: url('/image/icon-theme-dark.png');
+  --navbar-btn: url('../image/nav-btn-dark.png');
+  --logo-img: url('../image/logo-img.png');
+  --logo-text: url('../image/logo-text-dark.png');
+  --icon-search: url('../image/icon-search-dark.png');
+  --icon-cart: url('../image/icon-cart-dark.png');
+  --icon-theme: url('../image/icon-theme-dark.png');
   //step btn
-  --btn-pre: url('/image/arrow-pre-dark.png');
-  --btn-next: url('/image/arrow-next.png');
+  --btn-pre: url('../image/arrow-pre-dark.png');
+  --btn-next: url('../image/arrow-next.png');
 }
 
 // class

@@ -9,6 +9,7 @@ const formParts = document.querySelectorAll('.part')
 //狀態紀錄
 let step = 0
 // /////////////////購物籃變數/////////////////
+// const deliveryPanel = document.querySelector('.info-delivery')
 const itemsPanel = document.querySelector('.shopping-items')
 const totalCost = document.querySelector('.total-cost').children[1]
 const itemList = [
@@ -81,6 +82,12 @@ function stepBtnControll(step) {
   })
 }
 // /////////////////購物籃變數/////////////////
+// // 選擇運送方式
+// function deliveryPanelClicked(event) {
+//   if (!event.target.matches('input')) return
+//   console.log('click')
+// }
+// 修改購物車品項數量
 function itemsPanelClicked(event) {
   if (!event.target.matches('.minus') && !event.target.matches('.plus')) return
   const itemId = event.target.parentElement.dataset.id //取出id
@@ -138,6 +145,7 @@ stepperControllers.forEach(controller => {
 })
 // 購物籃
 itemsPanel.addEventListener('click', itemsPanelClicked)
+// deliveryPanel.addEventListener('click', deliveryPanelClicked)
 // navbar
 navBtn.addEventListener('click', navBtnClicked)
 // dark-mode
